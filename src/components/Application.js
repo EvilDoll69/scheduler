@@ -18,6 +18,7 @@ export default function Application(props) {
 
   const schedule = appointments.map((appointment) => {
     const interview = getInterview(state, appointment.interview);
+    console.log("HERE IS:", interview);
     return (
       <Appointment
         key={appointment.id}
@@ -30,6 +31,8 @@ export default function Application(props) {
       />
     );
   });
+
+  console.log("HERE STATES:", state);
 
   return (
     <main className="layout">
@@ -55,6 +58,10 @@ export default function Application(props) {
       </section>
       <section className="schedule">
         {schedule}
+        <Appointment           
+        key="last"           
+        time="5pm"   
+        />
       </section>
     </main>
   );

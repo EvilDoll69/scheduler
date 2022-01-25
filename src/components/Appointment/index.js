@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "components/Appointment/styles.scss";
 import Header from "./Header"
 import Show from "./Show"
@@ -22,12 +22,18 @@ const ERROR_DELETE = "ERROR_DELETE"
 export default function Appointment(props) {
   const { interview, time, listOfInterviewers, id } = props;
 
+  const [editing, setEditing] = useState(false);
+
 
   const { mode, transition, back } = useVisualMode(
     props.interview ? SHOW : EMPTY
   );
 
   function save(name, interviewer) {
+    if (!name || !interviewer) {
+      console.log("HERE THE IF CONDITION: name or interviewer are required!");
+      return 
+    }
     const interview = {
       student: name,
       interviewer
@@ -36,7 +42,7 @@ export default function Appointment(props) {
     transition(SAVING);
 
     props
-      .bookInterview(id, interview)
+      .bookInterview(id, interview, editing)
       .then(() => transition(SHOW))
       .catch(error => transition(ERROR_SAVE, true));
   }
@@ -50,13 +56,19 @@ export default function Appointment(props) {
   }
 
   function edit() {
+    setEditing(true);
     transition(EDIT);
+  }
+
+  function create() {
+    setEditing(false);
+    transition(CREATE);
   }
 
   return (
     <article className="appointment">
       <Header time={time} />
-      {mode === EMPTY && <Empty onAdd={() => transition(CREATE)} />}
+      {mode === EMPTY && <Empty onAdd={create} />}
 
       {mode === SHOW && (<Show
         student={interview.student}
@@ -77,7 +89,7 @@ export default function Appointment(props) {
 
       {mode === EDIT && <Form
         student={interview.student}
-        interviewer={interview.interviewer}
+        interviewer={interview.interviewer.id}
         interviewers={listOfInterviewers}
         onCancel={back}
         onSave={save} />}
