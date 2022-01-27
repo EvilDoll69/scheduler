@@ -32,8 +32,6 @@ export default function Application(props) {
     );
   });
 
-  console.log("HERE STATES:", state);
-
   return (
     <main className="layout">
       <section className="sidebar">

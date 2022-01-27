@@ -22,18 +22,14 @@ const ERROR_DELETE = "ERROR_DELETE"
 export default function Appointment(props) {
   const { interview, time, listOfInterviewers, id } = props;
 
-  const [editing, setEditing] = useState(false);
-
-
   const { mode, transition, back } = useVisualMode(
     props.interview ? SHOW : EMPTY
   );
 
   function save(name, interviewer) {
-    if (!name || !interviewer) {
-      console.log("HERE THE IF CONDITION: name or interviewer are required!");
-      return 
-    }
+    // if (!name || !interviewer) {
+    //   return 
+    // }
     const interview = {
       student: name,
       interviewer
@@ -42,7 +38,7 @@ export default function Appointment(props) {
     transition(SAVING);
 
     props
-      .bookInterview(id, interview, editing)
+      .bookInterview(id, interview)
       .then(() => transition(SHOW))
       .catch(error => transition(ERROR_SAVE, true));
   }
@@ -56,12 +52,10 @@ export default function Appointment(props) {
   }
 
   function edit() {
-    setEditing(true);
     transition(EDIT);
   }
 
   function create() {
-    setEditing(false);
     transition(CREATE);
   }
 
