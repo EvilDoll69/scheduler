@@ -62,3 +62,18 @@ npm test
 ```sh
 npm run storybook
 ```
+
+## **Screenshots**
+
+### F
+
+!["Large screen composing"](docs/scheduler-screenshot-01-view.png)
+
+Editing an appointment:
+
+!["Large screen error"](docs/scheduler-screenshot-02-edit.png)
+
+Cancelling an appointment on a phone:
+
+!["Small screen hover tweet"](docs/scheduler-screenshot-03-delete-phone.png)
+
