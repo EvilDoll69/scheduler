@@ -1,22 +1,22 @@
 import React from "react";
 import classNames from "classnames";
-import "components/DayListItem.scss"
+import "components/DayListItem.scss";
 
 export default function DayListItem(props) {
 
   const formatSpots = () => {
     if (!props.spots) {
       return `no spots remaining`;
-    }
+    };
     if (props.spots === 1) {
       return `${props.spots} spot remaining`;
-    }
+    };
     return `${props.spots} spots remaining`;
   };
 
   const dayClass = classNames("day-list__item", {
     "day-list__item--selected": props.selected,
-    "day-list__item--full": props.spots === 0,
+    "day-list__item--full": props.spots === 0
   });
 
   return (
@@ -25,4 +25,4 @@ export default function DayListItem(props) {
       <h3 className="text--light">{formatSpots(props.spots)}</h3>
     </li>
   );
-}
+};

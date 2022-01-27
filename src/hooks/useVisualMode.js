@@ -17,7 +17,7 @@ export function useVisualMode(initial) {
     // } else {    
     // setHistory([...history, newMode]);
     // }  setMode(newMode);
-  }
+  };
 
   function back() {
     if (history.length > 1) {
@@ -26,7 +26,7 @@ export function useVisualMode(initial) {
       setHistory(shortHistory);
       setMode(shortHistory[shortHistory.length - 1])
     }
-  }
+  };
   return { mode, transition, back };
 }
 

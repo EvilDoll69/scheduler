@@ -4,7 +4,7 @@ import Button from "components/Button";
 import { useState } from "react";
 
 export default function Form(props) {
-  const { interviewers, onCancel, onSave } = props;
+  const { interviewers, onCancel } = props;
   const [student, setStudent] = useState(props.name || "");
   const [interviewer, setInterviewer] = useState(props.interviewer || null);
   const [error, setError] = useState("");
@@ -22,14 +22,14 @@ export default function Form(props) {
   function validate() {
     if (!student) {
       return setError("Student name cannot be blank");
-    }
-    if (!interviewer) {
-      return setError("Interviewer must be selected");      
-    }
-  
+    };
+    // if (!interviewer) {
+    //   return setError("Interviewer must be selected");      
+    // };
+
     setError("");
     props.onSave(student, interviewer);
-  }
+  };
 
   return (
     <main className="appointment__card appointment__card--create">
@@ -60,5 +60,5 @@ export default function Form(props) {
       <section className="appointment__validation">{error}</section>
     </main>
 
-  )
-}
+  );
+};

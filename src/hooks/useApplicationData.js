@@ -22,7 +22,7 @@ export default function useApplicationData(props) {
   }, []);
 
   const getDaysWithUpdatedSpots = (newAppointments) => {
-   return state.days.map((eachDay) => {
+    return state.days.map((eachDay) => {
       let freeSpotsPerDay = 0;
 
       for (let id of eachDay.appointments) {
@@ -31,10 +31,10 @@ export default function useApplicationData(props) {
         }
       }
 
-      const updatedSpotsPerDay = {...eachDay, spots: freeSpotsPerDay};
+      const updatedSpotsPerDay = { ...eachDay, spots: freeSpotsPerDay };
       return updatedSpotsPerDay;
-    })    
-  }; 
+    })
+  };
 
   const bookInterview = function (id, interview) {
     const appointment = {
@@ -48,7 +48,7 @@ export default function useApplicationData(props) {
     };
 
     const days = getDaysWithUpdatedSpots(appointments);
-    
+
     return axios.put(`/api/appointments/${id}`, appointment)
       .then((res) => {
         setState(prev => ({ ...prev, appointments, days }))
@@ -70,7 +70,7 @@ export default function useApplicationData(props) {
 
     return axios.delete(`/api/appointments/${id}`, appointment)
       .then((res) => {
-        setState(prev => ({ ...prev, appointments, days  }))
+        setState(prev => ({ ...prev, appointments, days }))
       })
   }
 

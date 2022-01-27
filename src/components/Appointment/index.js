@@ -1,11 +1,11 @@
 import React, { useState } from "react";
+import { useVisualMode } from "hooks/useVisualMode";
 import "components/Appointment/styles.scss";
 import Header from "./Header"
 import Show from "./Show"
 import Empty from "./Empty"
 import Form from "./Form"
 import Error from "./Error";
-import { useVisualMode } from "hooks/useVisualMode";
 import Status from "./Status";
 import Confirm from "./Confirm";
 
@@ -27,9 +27,9 @@ export default function Appointment(props) {
   );
 
   function save(name, interviewer) {
-    // if (!name || !interviewer) {
-    //   return 
-    // }
+    if (!name || !interviewer) {
+      return
+    };
     const interview = {
       student: name,
       interviewer
@@ -41,7 +41,7 @@ export default function Appointment(props) {
       .bookInterview(id, interview)
       .then(() => transition(SHOW))
       .catch(error => transition(ERROR_SAVE, true));
-  }
+  };
 
   function deleteAppointment() {
     transition(DELETING, true);
@@ -49,15 +49,15 @@ export default function Appointment(props) {
       .cancelInterview(id)
       .then(() => transition(EMPTY))
       .catch(error => transition(ERROR_DELETE, true));
-  }
+  };
 
   function edit() {
     transition(EDIT);
-  }
+  };
 
   function create() {
     transition(CREATE);
-  }
+  };
 
   return (
     <article className="appointment">
