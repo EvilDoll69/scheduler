@@ -77,9 +77,11 @@ npm run storybook
 
 !["Booked appointment"](https://github.com/EvilDoll69/scheduler/blob/master/docs/Booked%20appointment.png)
 
+#### Booked appointment. When hovering over an appointment, edit and delete buttons appear
+
 !["When hovering over an appointment, edit and delete buttons appear"](https://github.com/EvilDoll69/scheduler/blob/master/docs/Edit%20Delete%20.png)
 
-#### Confirmation
+#### Confirmation. A confirmation step appears before the delete action
 
 !["A confirmation step appears before the delete action"](https://github.com/EvilDoll69/scheduler/blob/master/docs/Delete%20appointment.png)
 
