@@ -65,15 +65,25 @@ npm run storybook
 
 ## **Screenshots**
 
-### F
+#### Start page when there are no appointments scheduled
 
-!["Large screen composing"](docs/scheduler-screenshot-01-view.png)
+!["Start page"](https://github.com/EvilDoll69/scheduler/blob/master/docs/Start%20page.png)
 
-Editing an appointment:
+#### Form for booking an appointment
 
-!["Large screen error"](docs/scheduler-screenshot-02-edit.png)
+!["Form"](https://github.com/EvilDoll69/scheduler/blob/master/docs/Form%20for%20scheduling.png)
 
-Cancelling an appointment on a phone:
+#### Booked appointment
 
-!["Small screen hover tweet"](docs/scheduler-screenshot-03-delete-phone.png)
+!["Booked appointment"](https://github.com/EvilDoll69/scheduler/blob/master/docs/Booked%20appointment.png)
+
+!["When hovering over an appointment, edit and delete buttons appear"](https://github.com/EvilDoll69/scheduler/blob/master/docs/Edit%20Delete%20.png)
+
+#### Confirmation
+
+!["A confirmation step appears before the delete action"](https://github.com/EvilDoll69/scheduler/blob/master/docs/Delete%20appointment.png)
+
+#### Handling errors
+
+!["Error alerts"](https://github.com/EvilDoll69/scheduler/blob/master/docs/Handling%20errors.png)
 
