@@ -45,6 +45,7 @@ export default function Form(props) {
             data-testid="student-name-input"
           />
         </form>
+        <section className="appointment__validation">{error}</section>
         <InterviewerList
           interviewers={interviewers}
           value={interviewer}
@@ -57,7 +58,7 @@ export default function Form(props) {
           <Button confirm onClick={validate}>Save</Button>
         </section>
       </section>
-      <section className="appointment__validation">{error}</section>
+      
     </main>
 
   );

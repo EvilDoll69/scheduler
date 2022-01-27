@@ -36,6 +36,15 @@ Interview Scheduler requires [Node.js](https://nodejs.org) and [Postgres](https:
 - [classnames](https://www.npmjs.com/package/classnames)
 - [normalize.css](https://www.npmjs.com/package/normalize.css)
 
+#### **Development Dependencies**
+
+- [react-test-renderer](https://www.npmjs.com/package/react-test-renderer)
+- [prop-types](https://www.npmjs.com/package/prop-types)
+- [node-sass](https://www.npmjs.com/package/node-sass)
+- [cypress](https://www.npmjs.com/package/cypress)
+- [eslint-plugin-cypress](https://www.npmjs.com/package/eslint-plugin-cypress)
+
+
 ## Running Webpack Development Server
 
 ```sh

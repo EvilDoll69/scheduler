@@ -92,7 +92,7 @@ export default function Appointment(props) {
         message={"Saving..."} />}
 
       {mode === DELETING && <Status
-        message={"Deliting..."} />}
+        message={"Deleting..."} />}
 
       {mode === ERROR_SAVE && <Error
         message={"Could not save the appointment"}
